@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather App</title>
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+	<!-- fontawesome -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- weather icons -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+	<!-- stylesheet -->
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+	<div class="hero">
+		<!-- navbar -->
+		<nav class="navbar">
+		  <a class="navbar-brand" href="#">
+		    <i class="fa fa-sun-o" aria-hidden="true"></i>
+		    <strong>Local</strong>Weather
+		  </a>
+		  <span id="date" class="lead">11:00AM | Mar 3, 2018</span>
+		</nav>
+		<!-- weather section  -->
+		<div class="container">
+			<div class="row">
+				<div id="" class="col-8 mx-auto weather">
+					<!-- weather header section -->
+					<div class="weather-head">
+						<h1 id="location" class="text-center display-4"></h1>
+						<div class="row">							
+							<div id="description" class="description col-6 text-center">
+								<i id="icon-desc" class="wi wi-owm-200"></i>
+								Thunderstorm	
+							</div>
+							<div id="temperature" class="col-6 text-center">
+								60 <i id="icon-thermometer" class="wi wi-thermometer"></i>					
+							</div>	
+						</div>
+						<!-- weather body header -->
+						<div class="weather-body">					
+							<div class="row">
+								<div class="humidity col-4 text-center">
+									<i class="wi wi-raindrops"></i><span> Humidity</span>
+								</div>
+								<div class="wind col-4 text-center">
+									<i class="wi wi-strong-wind"></i><span> Wind Speed</span>
+								</div>
+								<div class="wind-degree col-4 text-center">
+									<i class="wi wi-direction-up-right"></i><span> Wind Direction</span>
+								</div>				
+							</div>
+							<!-- weather body data -->
+							<div class="row">
+								<div id="humidity" class="humidity-data col-4 text-center">
+									75%
+								</div>
+								<div id="wind" class="wind-data col-4 text-center">
+									34mph
+								</div>
+								<div id="degree" class="degree-data col-4 text-center">
+									90o
+								</div>
+							</div>
+						</div>						
+					</div>					
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<!-- javascript file -->
+	<script src="js/weather.js"></script>
+
+</body>
+</html>
