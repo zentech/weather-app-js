@@ -66,7 +66,7 @@ window.onload = function() {
 
 				//insert into html page
 				var description = document.getElementById("description");
-				description.innerHTML = `<i id="icon-desc" class="wi wi-owm-${id}"></i> ${weatherDesc}`;
+				description.innerHTML = `<i id="icon-desc" class="wi wi-owm-${id}"></i><p>${weatherDesc}</p>`;
 				var tempElement = document.getElementById("temperature");
 				tempElement.innerHTML = `${tempFaren}<i id="icon-thermometer" class="wi wi-thermometer"></i>`	;
 				var humidityElem = document.getElementById("humidity");
