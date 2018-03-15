@@ -10,16 +10,12 @@ window.onload = function() {
 	var appid = "appid=8e1880f460a20463565be25bc573bdc6";
 	var location = document.getElementById("location");	
 	var currentDate = new Date();
-	var month = currentDate.getMonth()+1;
-	var day = currentDate.getDate();
-	var year = currentDate.getFullYear();
-	var hour = currentDate.getHours();
-	var minute = currentDate.getMinutes();
+	var dayNight = "day";	
 
 	//setting the date
-	console.log(hour+" "+minute+" = "+month+"/"+day+"/"+year)
 	var dateElem = document.getElementById("date");
-	dateElem.innerHTML = `${hour}:${minute} | ${month}/${day}/${year}`;
+	var strDate = currentDate.toString();
+	dateElem.innerHTML = strDate.substring(0, strDate.length-18)
 
 	//calling ipinfo.io/json function
 	httpReqIpAsync(ipUrl);							
@@ -63,10 +59,15 @@ window.onload = function() {
 				var humidity = jsonWeather.main.humidity;
 				var windSpeed = jsonWeather.wind.speed; 
 				var windDegree = jsonWeather.wind.deg;
-
+				//find whether is day or night
+				var sunSet = jsonWeather.sys.sunset;
+				//sunset is 10 digits and currentDate 13 so div by 1000
+				var timeNow = Math.round(currentDate / 1000);
+				console.log(timeNow + "<" + sunSet +" = "+(timeNow < sunSet))
+				dayNight = (timeNow < sunSet) ? "day" : "night";
 				//insert into html page
 				var description = document.getElementById("description");
-				description.innerHTML = `<i id="icon-desc" class="wi wi-owm-${id}"></i><p>${weatherDesc}</p>`;
+				description.innerHTML = `<i id="icon-desc" class="wi wi-owm-${dayNight}-${id}"></i><p>${weatherDesc}</p>`;
 				var tempElement = document.getElementById("temperature");
 				tempElement.innerHTML = `${tempFaren}<i id="icon-thermometer" class="wi wi-thermometer"></i>`	;
 				var humidityElem = document.getElementById("humidity");
