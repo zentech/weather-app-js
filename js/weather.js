@@ -58,7 +58,10 @@ window.onload = function() {
 				console.log(tempFaren)
 				var humidity = jsonWeather.main.humidity;
 				var windSpeed = jsonWeather.wind.speed; 
-				var windDegree = jsonWeather.wind.deg;
+				//converting visibility to miles 
+				var visibility = Math.round(jsonWeather.visibility / 1000);
+				console.log(visibility)
+
 				//find whether is day or night
 				var sunSet = jsonWeather.sys.sunset;
 				//sunset is 10 digits and currentDate 13 so div by 1000
@@ -74,8 +77,8 @@ window.onload = function() {
 				humidityElem.innerHTML = `${humidity}%`;
 				var windElem = document.getElementById("wind");
 				windElem.innerHTML = `${windSpeed}m/h`;
-				var degreeElem = document.getElementById("degree");
-				degreeElem.innerHTML = `${windDegree}&#176;`;
+				var visibilityElem = document.getElementById("visibility");
+				visibilityElem.innerHTML = `${visibility} miles`;
 			}
 		}
 		httpReqWeather.send();

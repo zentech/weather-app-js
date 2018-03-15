@@ -50,7 +50,7 @@ body {
 	padding-top: 2rem;
 }
 
-.humidity, .wind, .wind-degree {
+.humidity, .wind, .visibility {
 	border-top: 1px solid white;
 	border-bottom: 1px solid white;
 	font-size: 1.5rem;
@@ -69,7 +69,7 @@ body {
 	font-size: 5rem;
 }
 
-#humidity, #wind, #degree {
+#humidity, #wind, #visibility {
 	font-size: 2rem;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
