@@ -55,12 +55,12 @@ window.onload = function() {
 				var icon = `<i class="wi wi-owm-${id}"></i>`
 				var temperature = jsonWeather.main.temp;
 				var tempFaren = Math.round(1.8 * (temperature - 273) + 32)
-				console.log(tempFaren)
+				// console.log(tempFaren)
 				var humidity = jsonWeather.main.humidity;
 				var windSpeed = jsonWeather.wind.speed; 
 				//converting visibility to miles 
 				var visibility = Math.round(jsonWeather.visibility / 1000);
-				console.log(visibility)
+				// console.log(visibility)
 
 				//find whether is day or night
 				var sunSet = jsonWeather.sys.sunset;
