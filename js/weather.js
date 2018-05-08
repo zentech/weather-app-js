@@ -14,8 +14,7 @@ window.onload = function() {
 
 	//setting the date
 	var dateElem = document.getElementById("date");
-	var strDate = currentDate.toString();
-	dateElem.innerHTML = strDate.substring(0, strDate.length-18)
+	dateElem.innerHTML = currentDate.toDateString();
 
 	//calling ipinfo.io/json function
 	httpReqIpAsync(ipUrl);							
